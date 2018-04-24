@@ -3,6 +3,7 @@
 
 a = 52;
 wT = 2;
+potHeight = 70;
 
 // rotate as per a, v, but around point pt
 module rotate_about_pt(a, v, pt) {
@@ -12,7 +13,7 @@ module rotate_about_pt(a, v, pt) {
                 children();   
 }
 
-for(i=[0:70]){
+for(i=[0:potHeight]){
   translate([0,0,i]){
     rotate_about_pt(i*0.6, 0,[a/2,a/2,0])
     if(i<wT){ 
