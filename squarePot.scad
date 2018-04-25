@@ -1,7 +1,7 @@
 //bottom a=50
-//top a=52
+//top a=56.2
 
-a = 52;
+a = 56.5;
 wT = 2;
 potHeight = 70;
 
