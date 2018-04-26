@@ -1,17 +1,18 @@
 a = 7;
 b = 12;
-base_diameter=70;
-no_teeth = 20;
+base_diameter=50;
+no_teeth = 16;
 height=70;
 bearing_od = 15;
 step_size=0.5;
 base_height=5; //should be equal to the bearing thickness
 top_ring_height=20;
 rotate_step=0.3;
+direction = "left"; //"left"
 
 for(j=[0:step_size:height]){
   translate([0,0,j])
-  rotate(j*rotate_step)
+  rotate(-j*rotate_step)
   for(i=[0:no_teeth]){
       rotate([0,0,i*360/no_teeth])
       linear_extrude(height=step_size,convexity=10,twist=0)
@@ -32,6 +33,7 @@ for(j=[0:step_size:height]){
         }
       }
       else if((j>=base_height)&&(j<=(2*base_height))){
+        linear_extrude(height=step_size,convexity=10,twist=0,center=false)
         circle(base_diameter);
       }
     }
